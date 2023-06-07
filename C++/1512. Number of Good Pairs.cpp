@@ -59,3 +59,27 @@ public:
         return numOfPairs;
     }
 };
+
+// Second method without pairs formula
+// 0ms O(n) time
+
+class Solution
+{
+public:
+    int numIdenticalPairs(vector<int> &nums)
+    {
+        int numOfPairs = 0;
+        unordered_map<int, int> myMap;
+
+        for (auto num : nums)
+        {
+            if (myMap.count(num))
+            {
+                numOfPairs += myMap[num];
+            }
+            myMap[num]++;
+        }
+
+        return numOfPairs;
+    }
+};

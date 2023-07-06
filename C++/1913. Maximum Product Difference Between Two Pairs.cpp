@@ -30,6 +30,9 @@ Constraints:
 1 <= nums[i] <= 104
 
 */
+
+// O(nlogn)
+
 #include <vector>
 #include <algorithm>
 

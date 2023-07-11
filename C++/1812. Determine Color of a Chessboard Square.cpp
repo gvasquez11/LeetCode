@@ -16,7 +16,7 @@ Example 1:
 Input: coordinates = "a1"
 Output: false
 Explanation: From the chessboard above, the square with coordinates "a1" is black, so return false.
-Example 2:
+1Example 2:
 
 Input: coordinates = "h3"
 Output: true

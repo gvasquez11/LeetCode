@@ -32,3 +32,54 @@ Constraints:
 
 
 */
+
+#include <iostream>
+#include <unordered_map>
+#include <unordered_set>
+
+using namespace std;
+
+class Solution
+{
+public:
+    vector<vector<int>> findDifference(vector<int> &nums1, vector<int> &nums2)
+    {
+
+        vector<vector<int>> result;
+        unordered_map<int, int> nums1Map;
+        unordered_map<int, int> nums2Map;
+        unordered_set<int> used;
+
+        vector<int> notInTwo;
+        vector<int> notInOne;
+
+        for (auto num : nums1)
+            nums1Map[num]++;
+
+        for (auto num : nums2)
+            nums2Map[num]++;
+
+        for (int i = 0; i < nums1.size(); i++)
+        {
+            if (!(nums2Map.count(nums1[i])) && used.find(nums1[i]) == used.end())
+            {
+                notInTwo.push_back(nums1[i]);
+                used.insert(nums1[i]);
+            }
+        }
+
+        for (int i = 0; i < nums2.size(); i++)
+        {
+            if (!(nums1Map.count(nums2[i])) && used.find(nums2[i]) == used.end())
+            {
+                notInOne.push_back(nums2[i]);
+                used.insert(nums2[i]);
+            }
+        }
+
+        result.push_back(notInTwo);
+        result.push_back(notInOne);
+
+        return result;
+    }
+};

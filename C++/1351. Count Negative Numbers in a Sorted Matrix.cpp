@@ -47,3 +47,32 @@ public:
         return result;
     }
 };
+
+// Using Binary Search
+class Solution
+{
+public:
+    int countNegatives(vector<vector<int>> &grid)
+    {
+
+        int result = 0;
+
+        for (auto row : grid)
+        {
+            int left = 0;
+            int right = row.size() - 1;
+
+            while (left <= right)
+            {
+                int middle = (left + right) / 2;
+                if (row[middle] < 0)
+                    right = middle - 1;
+                else
+                    left = middle + 1;
+            }
+
+            result += grid[0].size() - left;
+        }
+        return result;
+    }
+};

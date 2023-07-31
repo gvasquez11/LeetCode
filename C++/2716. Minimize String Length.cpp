@@ -34,3 +34,24 @@ Constraints:
 s contains only lowercase English letters
 
 */
+
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+class Solution
+{
+public:
+    int minimizedStringLength(string s)
+    {
+        map<char, int> myMap;
+
+        for (auto c : s)
+        {
+            myMap[c]++;
+        }
+
+        return myMap.size();
+    }
+};

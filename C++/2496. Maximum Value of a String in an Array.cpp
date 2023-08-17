@@ -36,6 +36,7 @@ strs[i] consists of only lowercase English letters and digits.
 */
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <map>
 

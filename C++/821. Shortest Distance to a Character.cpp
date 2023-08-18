@@ -29,3 +29,42 @@ s[i] and c are lowercase English letters.
 It is guaranteed that c occurs at least once in s.
 
 */
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
+public:
+    vector<int> shortestToChar(string s, char c)
+    {
+
+        vector<int> positions;
+        vector<int> result;
+
+        for (int i = 0; i < s.size(); i++)
+        {
+            if (s[i] == c)
+                positions.push_back(i);
+        }
+
+        for (auto val : positions)
+            cout << val << endl;
+
+        for (int i = 0; i < s.size(); i++)
+        {
+            int shortestDistance = INT_MAX;
+            for (int j = 0; j < positions.size(); j++)
+            {
+                int dif = abs(i - positions[j]);
+                if (dif < shortestDistance)
+                    shortestDistance = dif;
+            }
+            result.push_back(shortestDistance);
+        }
+
+        return result;
+    }
+};

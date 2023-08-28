@@ -48,3 +48,40 @@ characters in words[i] are either lowercase English letters or characters from t
 separator is a character from the string ".,|$#@" (excluding the quotes)
 
 */
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
+public:
+    vector<string> splitWordsBySeparator(vector<string> &words, char separator)
+    {
+
+        vector<string> result;
+
+        for (auto word : words)
+        {
+            string temp = "";
+            for (int i = 0; i < word.size(); i++)
+            {
+                if (word[i] == separator)
+                {
+                    if (temp != "")
+                        result.push_back(temp);
+
+                    temp = "";
+                }
+                else
+                    temp += word[i];
+            }
+
+            if (temp != "")
+                result.push_back(temp);
+        }
+
+        return result;
+    }
+};

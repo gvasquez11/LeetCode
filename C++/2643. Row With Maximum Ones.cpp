@@ -35,6 +35,11 @@ mat[i][j] is either 0 or 1.
 
 */
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 class Solution
 {
 public:

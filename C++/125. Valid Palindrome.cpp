@@ -31,3 +31,33 @@ Constraints:
 s consists only of printable ASCII characters.
 
 */
+
+#include <iostream>
+
+using namespace std;
+
+class Solution
+{
+public:
+    bool isPalindrome(string s)
+    {
+
+        string temp = "";
+        for (auto letter : s)
+        {
+            if (isalpha(letter))
+                temp += tolower(letter);
+            else if (isdigit(letter))
+                temp += letter;
+        }
+
+        string wordReverse = temp;
+
+        reverse(wordReverse.begin(), wordReverse.end());
+
+        cout << temp << endl;
+        cout << wordReverse << endl;
+
+        return temp == wordReverse;
+    }
+};

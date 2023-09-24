@@ -36,6 +36,7 @@ Constraints:
 0 <= hours[i], target <= 105
 
 */
+
 #include <iostream>
 #include <vector>
 

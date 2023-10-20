@@ -58,6 +58,12 @@ matrix[i][j] is either 0 or 1.
 
 */
 
+#include <iostream>
+#include <vector>
+#include <set>
+
+using namespace std;
+
 class Solution
 {
 public:

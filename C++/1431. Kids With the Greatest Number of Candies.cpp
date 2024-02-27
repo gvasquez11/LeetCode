@@ -51,6 +51,8 @@ public:
     {
 
         int maxVal = candies[0];
+        // using build in function
+        //  int maxVal = *max_element(candies.begin(), candies.end());
         vector<bool> result = {};
 
         for (auto candy : candies)

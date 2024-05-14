@@ -83,3 +83,46 @@ public:
         return result;
     }
 };
+
+// Different type of solution.
+class Solution
+{
+public:
+    vector<vector<int>> findDifference(vector<int> &nums1, vector<int> &nums2)
+    {
+
+        vector<int> result1;
+        vector<int> result2;
+
+        unordered_map<int, int> mp1;
+        unordered_map<int, int> mp2;
+
+        for (auto num : nums1)
+        {
+            mp1[num]++;
+        }
+
+        for (auto num : nums2)
+        {
+            if (!mp1.count(num) && mp1[num] <= 1)
+                result1.push_back(num);
+        }
+
+        for (auto num : nums2)
+        {
+            mp2[num]++;
+        }
+
+        for (auto num : nums1)
+        {
+            if (!mp2.count(num) && mp2[num] <= 1)
+                result2.push_back(num);
+        }
+
+        vector<vector<int>> finalResult;
+        finalResult.push_back(result2);
+        finalResult.push_back(result1);
+
+        return finalResult;
+    }
+};

@@ -55,3 +55,34 @@ public:
         return maxKey;
     }
 };
+
+// 6/2/2024 Attempt
+
+class Solution
+{
+public:
+    int majorityElement(vector<int> &nums)
+    {
+
+        unordered_map<int, int> numsMap;
+
+        for (auto num : nums)
+        {
+            numsMap[num]++;
+        }
+
+        int maxNum = INT_MIN;
+        int result = 0;
+
+        for (auto i = numsMap.begin(); i != numsMap.end(); i++)
+        {
+            if (i->second > maxNum)
+            {
+                maxNum = i->second;
+                result = i->first;
+            }
+        }
+
+        return result;
+    }
+};

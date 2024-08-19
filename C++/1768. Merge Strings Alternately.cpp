@@ -106,3 +106,39 @@ public:
         return result;
     }
 };
+
+// Solution on 8/19/2024
+
+class Solution
+{
+public:
+    string mergeAlternately(string word1, string word2)
+    {
+
+        int minLen = min(word1.size(), word2.size());
+
+        string result = "";
+
+        if (word1.empty())
+            return word2;
+
+        if (word2.empty())
+            return word1;
+
+        for (int i = 0; i < minLen; i++)
+        {
+            result += word1[i];
+            result += word2[i];
+        }
+
+        if (word1.size() != word2.size())
+        {
+            if (word1.size() > word2.size())
+                result += word1.substr(minLen);
+            else
+                result += word2.substr(minLen);
+        }
+
+        return result;
+    }
+};

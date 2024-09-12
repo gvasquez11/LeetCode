@@ -99,3 +99,33 @@ public:
         }
     }
 };
+
+// solution on Sept 11,2024
+
+class Solution
+{
+public:
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
+    {
+
+        int i = m - 1;
+        int j = n - 1;
+
+        int position = m + n - 1;
+
+        while (j >= 0)
+        {
+            if (i < 0 || i >= 0 && nums2[j] > nums1[i])
+            {
+                nums1[position] = nums2[j];
+                j--;
+            }
+            else
+            {
+                nums1[position] = nums1[i];
+                i--;
+            }
+            position--;
+        }
+    }
+};
